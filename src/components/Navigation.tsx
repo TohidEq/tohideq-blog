@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
+import { FaQuestion } from "react-icons/fa";
 
 function Navigation() {
   const handleMenu = () => {
@@ -10,12 +12,25 @@ function Navigation() {
     document.getElementById("menu__btn")!.classList.toggle("menu-open");
   };
 
+  // passed X% view height or not
+  const [passedXVH, setPassedXVH] = useState(false);
+  const XPercent = 20;
+
+  useEffect(() => {
+    const onScroll = () => {
+      setPassedXVH(window.scrollY > window.innerHeight * (XPercent/100));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className={"navigation"}>
+    <nav className={`navigation ${passedXVH && "navigation--hidden"} `}>
       <div className="nav-controller mx-auto">
         <div className={"container"}>
           <Link href={"/"} className="title ">
-            <span>N</span>ext <span>B</span>log
+            <span>T</span>ohidEq's <span>B</span>log
           </Link>
 
           <div className="links-desktop">
@@ -25,8 +40,8 @@ function Navigation() {
             <Link href={"/posts"} className="link1">
               Posts
             </Link>
-            <Link href={"/"} className="link1">
-              C
+            <Link href={"/about"} className="link1">
+              About
             </Link>
           </div>
           <div className="links-mobile">

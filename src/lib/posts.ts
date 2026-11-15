@@ -7,12 +7,14 @@ import rehypeSlug from "rehype-slug";
 import Video from "@/components/Video";
 import CustomImage from "@/components/CustomImage";
 
+
+
 export async function getPostByName(
   fileName: string
 ): Promise<BlogPost | undefined> {
   //
   const res = await fetch(
-    `https://raw.githubusercontent.com/TohidEq/test-mdx-posts/master/${fileName}`,
+    `https://raw.githubusercontent.com/TohidEq/tohideq-blog-posts-mdx/master/${fileName}`,
     {
       headers: {
         Accept: "application/vnd.github+json",
@@ -33,6 +35,7 @@ export async function getPostByName(
   const { frontmatter, content } = await compileMDX<{
     title: string;
     date: string;
+    description: string;
     tags: string[];
   }>({
     source: rawMDX,
@@ -66,6 +69,7 @@ export async function getPostByName(
       id,
       title: frontmatter.title,
       date: frontmatter.date,
+      description: frontmatter.description,
       tags: frontmatter.tags,
     },
     content,
@@ -77,7 +81,7 @@ export async function getPostByName(
 
 export async function getPostsMeta(): Promise<Meta[] | undefined> {
   const res = await fetch(
-    "https://api.github.com/repos/TohidEq/test-mdx-posts/git/trees/master?recursive=1",
+    "https://api.github.com/repos/TohidEq/tohideq-blog-posts-mdx/git/trees/master?recursive=1",
     {
       headers: {
         Accept: "application/vnd.github+json",

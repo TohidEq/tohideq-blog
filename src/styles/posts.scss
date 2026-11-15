@@ -5,13 +5,19 @@
   @apply max-w-[70ch] mx-auto;
   .post-cards {
     .post-card {
-      @apply flex flex-wrap;
+      @apply flex flex-wrap pb-5;
       a {
         @extend .link1;
         @apply w-full no-underline pt-6 text-center prose-2xl text-white flex flex-nowrap;
       }
       span {
-        @apply pt-1 pb-5 text-light;
+        @apply pt-0.5 text-light w-full;
+        &.date{
+          @apply pb-0.5 opacity-70;
+        }
+        &.description{
+          @apply text-justify;
+        }
       }
     }
   }

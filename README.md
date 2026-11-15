@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TohidEq's Blog
 
-## Getting Started
+## Preview
+![Preview only desk](./screenshots/only-desk.png)
+![Preview desk mobile](./screenshots/desk-mobile.png)
 
-First, run the development server:
+### Configuration
+- Create your custom database github repo and fill it with mdx files
+- Edit `./src/lib/posts.ts` and change url in line 17 to your custom repo url:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```js
+    `https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME_HERE/YOUR_REPO_NAME_HERE/YOUR_BRANCH_NAME_HERE/${fileName}`,
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Edit `./next.config.js` change line 9 too (for `Images`):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```js
+        pathname: '/YOUR_GITHUB_USERNAME_HERE/YOUR_REPO_NAME_HERE/YOUR_BRANCH_NAME_HERE/YOUR_IMAGE_FOLDER_NAME_HERE/**'
+```
+- Create a github token with public repo access (to your `mdx-db-repo`)
+- Create `.env.local` file (`SITE_URL` is Optional in local network)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+> u can use `SITE_URL=YOUR_SITE_NAME` to deploy in vercel
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```sh
+SITE_URL=http://localhost:3000
+MY_SECRET_TOKEN=randomstringhereanythingyouwant
+GITHUB_TOKEN=your_github_token_access_to_public_repos_here
+```

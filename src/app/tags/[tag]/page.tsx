@@ -4,8 +4,6 @@ import Link from "next/link";
 
 export const revalidate = 10; //86400;
 
-import React from "react";
-
 type Props = {
   params: {
     tag: string;
@@ -25,6 +23,7 @@ export async function generateStaticParams() {
 export function generateMetadata({ params: { tag } }: Props) {
   return {
     title: `Posts about ${tag}`,
+    description: `All Posts with ${tag} tag`
   };
 }
 

@@ -1,19 +1,17 @@
 .home {
   .img {
-    @apply top-1/2
-    -translate-y-1/2
-    left-1/2
-    -translate-x-1/2
-    fixed
-    w-[440px]
+    @apply w-[440px] relative
+    p-0 my-3
+    max-w-[100vmin]
     md:w-auto
     md:max-w-2xl
-    lg:max-w-4xl;
+    lg:max-w-4xl
+    ;
 
     img {
-      @apply grayscale;
+      @apply grayscale p-0 m-0;
     }
-    .img-grad {
+    .img-frame{
       @apply absolute bg-transparent w-full h-full top-0 left-0;
       box-shadow: 0px 0px 20px 15px rgba(11, 11, 13, 1) inset;
       -webkit-box-shadow: 0px 0px 20px 15px rgba(11, 11, 13, 1) inset;

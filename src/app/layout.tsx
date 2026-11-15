@@ -4,8 +4,8 @@ import "@/styles/index.scss";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "NextBlog",
-  description: "NextBlog is a simple NextJS Blog. :D",
+  title: "TohidEq's Blog",
+  description: "TohidEq's Personal Blog",
 };
 
 export default function RootLayout({

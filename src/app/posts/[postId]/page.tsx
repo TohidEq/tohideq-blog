@@ -69,11 +69,11 @@ export default async function Post({ params: { postId } }: Props) {
           <div className="o-tags">{tags}</div>
         </div>
         <div className="other-links o-nav">
-          <Link href={"/"}>
-            Back to Home <AiOutlineLink className={"h-full ml-1 mt-1"} />
-          </Link>
           <Link href={"/posts"}>
-            Back to Posts <AiOutlineLink className={"h-full ml-1 mt-1"} />
+            Posts <AiOutlineLink className={"h-full ml-1 mt-1"} />
+          </Link>
+          <Link href={"/"}>
+            Home <AiOutlineLink className={"h-full ml-1 mt-1"} />
           </Link>
         </div>
       </div>

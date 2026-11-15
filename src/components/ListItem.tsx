@@ -8,7 +8,7 @@ type Props = {
 };
 
 export default function ListItem({ post }: Props) {
-  const { id, title, date } = post;
+  const { id, title, description, date } = post;
   const formattedDate = getFormattedDate(date);
   return (
     <div className="post-card">
@@ -17,6 +17,8 @@ export default function ListItem({ post }: Props) {
         <AiOutlineLink className={"h-full ml-1"} />
       </Link>
       <span className="date">{formattedDate}</span>
+      <span className="description">{description}</span>
+
     </div>
   );
 }

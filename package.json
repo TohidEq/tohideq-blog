@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-blog",
+  "name": "tohideq-blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,9 @@
     "lint": "next lint",
     "postbuild": "next-sitemap",
     "build-css": "tailwindcss --postcss -i ./src/styles/tailwind.scss -o ./src/styles/index.scss --watch"
+  },
+  "engines": {
+    "node": "26.x"
   },
   "dependencies": {
     "@types/highlight.js": "^10.1.0",

@@ -6,7 +6,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'raw.githubusercontent.com',
         port: '',
-        pathname: '/TohidEq/test-mdx-posts/master/images/**'
+        pathname: '/TohidEq/tohideq-blog-posts-mdx/master/images/**'
       }
     ]
   }

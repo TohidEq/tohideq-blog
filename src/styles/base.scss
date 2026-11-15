@@ -5,8 +5,14 @@ font-family: 'Josefin Sans', sans-serif;
 font-family: 'Roboto Mono', monospace;
 */
 
+html{
+ @apply bg-black overflow-x-hidden;
+}
+
 body {
-  @apply bg-black text-blue-50;
+  @apply bg-black text-blue-50
+  overflow-x-hidden
+  ;
 
   & > * > :not(pre) {
     font-family: "Josefin Sans", sans-serif;
@@ -42,7 +48,7 @@ a.link1 {
 }
 
 a.prevlink1 {
-  @apply border-b-2 
+  @apply border-b-2
   border-dark;
   &:hover {
     @apply border-light;
