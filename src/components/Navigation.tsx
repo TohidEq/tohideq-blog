@@ -62,7 +62,7 @@ function Navigation() {
                     </a>
                   </li>
                   <li className="menu__list__item">
-                    <a href="#" className="link1">
+                    <a href="/about" className="link1">
                       About
                     </a>
                   </li>
