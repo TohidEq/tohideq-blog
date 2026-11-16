@@ -63,7 +63,7 @@ function Navigation() {
                   </li>
                   <li className="menu__list__item">
                     <a href="#" className="link1">
-                      C
+                      About
                     </a>
                   </li>
                 </ul>
